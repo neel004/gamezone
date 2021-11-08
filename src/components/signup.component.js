@@ -39,7 +39,7 @@ export default () => {
     
   };
   return (
-    <div className="auth-inner">
+    <div className="auth-innerr">
       <div>
       <form onSubmit={onSubmit}>
       <h3>Sign Up</h3>
