@@ -1,0 +1,10 @@
+.borderexample {
+    border-style:solid;
+    border-color:black;
+    background-color: antiquewhite;
+    border-radius: 12px;
+    border-collapse: collapse;
+    padding-top: 5%;
+    text-align: center;
+   }
+
