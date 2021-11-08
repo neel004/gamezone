@@ -14,7 +14,7 @@ export default() => {
             // const COGNITO_Pool_ID = "us-east-1_5G1rm0YWR";
             // const COGNITO_POOL_URL = "gamezone.auth.us-east-1.amazoncognito.com";
             //const CLIENT_SECRET = "ADD SECRET KEY OF APP CLIENT";
-            window.location.href = "https://gamezone.auth.us-east-1.amazoncognito.com//oauth2/authorize?identity_provider=Google&redirect_uri=http://localhost:3000/test/&response_type=token&client_id=33j71htshrgj2jm6uir8u00ia8&scope=email openid phone profile"
+            window.location.href = "https://gamezone.auth.us-east-1.amazoncognito.com//oauth2/authorize?identity_provider=Google&redirect_uri=https://gamezone004.herokuapp.com/test/&response_type=token&client_id=33j71htshrgj2jm6uir8u00ia8&scope=email openid phone profile"
             // https:///gamezone.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=33j71htshrgj2jm6uir8u00ia8&redirect_uri=https://localhost/"
           }
         const onSubmit = event => {

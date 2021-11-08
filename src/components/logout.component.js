@@ -7,6 +7,6 @@ export default() =>{
     delete localStorage.showProfile
     delete localStorage.user
     setShowProfile(false)
-    window.location.href = "https://gamezone.auth.us-east-1.amazoncognito.com/logout?client_id=33j71htshrgj2jm6uir8u00ia8&logout_uri=http://localhost:3000/sign-in/"
+    window.location.href = "https://gamezone.auth.us-east-1.amazoncognito.com/logout?client_id=33j71htshrgj2jm6uir8u00ia8&logout_uri=https://gamezone004.herokuapp.com/sign-in/"
      return (<></>);
 }
