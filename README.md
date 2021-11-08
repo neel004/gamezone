@@ -1,2 +1,2 @@
 ## gamezone
-#A cloud-gamming website.
+# A cloud-gamming website.
