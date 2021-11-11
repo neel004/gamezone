@@ -4,7 +4,7 @@ import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
 import UserPool from "../UserPool";
 import './login.css'
 export default() => {
-
+  
         const {setUsername, setShowProfile} = useContext(LoginContext)
     
         const [email, setEmail] = useState("");
