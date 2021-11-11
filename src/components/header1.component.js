@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-ro
 import Login from "./login.component";
 import SignUp from "./signup.component";
 import Aboutus from "./aboutus.component";
+import ForgetPassword from "./forgetPassword.component";
 import './header1.css'
 import test from "./test.component";
 export default() => {
@@ -23,6 +24,9 @@ export default() => {
                     <Link className="nav-link" to={"/sign-up"}>Sign up</Link>
                   </li>
                   <li className="nav-item">
+                    <Link className="nav-link" to={"/forget-password"}>Forget Password</Link>
+                  </li>
+                  <li className="nav-item">
                     <Link className="nav-link" to={"/about-us"}>About Us</Link>
                   </li>
                 </ul>
@@ -37,6 +41,7 @@ export default() => {
                 <Route path="/test" component={test} />
                 <Route path="/sign-up" component={SignUp} />
                 <Route path="/about-us" component={Aboutus} />
+                <Route path="/forget-password" component={ForgetPassword} />
               </Switch>
             </div>
         </div>

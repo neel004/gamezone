@@ -1,15 +1,23 @@
 import React, { useState } from "react";
 import UserPool from "../UserPool";
 import './signup.css'
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
+
 export default () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fname, setFname] = useState("");
   const [lname, setLname] = useState("");
   function redirectt() {
+    // const COGNITO_CLIENT_ID = "33j71htshrgj2jm6uir8u00ia8";
+    // const COGNITO_Pool_ID = "us-east-1_5G1rm0YWR";
+    // const COGNITO_POOL_URL = "gamezone.auth.us-east-1.amazoncognito.com";
+    //const CLIENT_SECRET = "ADD SECRET KEY OF APP CLIENT";
     window.location.href = "https://gamezone.auth.us-east-1.amazoncognito.com//oauth2/authorize?identity_provider=Google&redirect_uri=https://gamezone004.herokuapp.com/test/&response_type=token&client_id=33j71htshrgj2jm6uir8u00ia8&scope=email openid phone profile"
+    // https:///gamezone.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=33j71htshrgj2jm6uir8u00ia8&redirect_uri=https://localhost/"
   }
   const registerUser = (email, lname, fname) => {
+    // const uid = "18it092@charusat.edu.in"
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -33,7 +41,7 @@ export default () => {
     
   };
   return (
-    <div className="auth-innerr">
+    <div className="auth-inner">
       <div>
       <form onSubmit={onSubmit}>
       <h3>Sign Up</h3>
@@ -60,7 +68,7 @@ export default () => {
 
       <button type="submit" className="btn btn-primary btn-block">Sign Up</button>
       <p className="forgot-password text-right">
-          Already registered <a href="/sign-in">sign in?</a>
+          Already registered <Link className="nav-link" to={"/sign-in"}>Sign In?</Link>
       </p>
   </form>
       </div>

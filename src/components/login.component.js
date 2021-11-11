@@ -1,17 +1,27 @@
 import React, { useState, useContext } from "react";
 import { LoginContext } from "../contexts/LoginContext";
 import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import UserPool from "../UserPool";
 import './login.css'
 export default() => {
-  
+
         const {setUsername, setShowProfile} = useContext(LoginContext)
-    
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
         function redirectt() {
+            // const COGNITO_CLIENT_ID = "33j71htshrgj2jm6uir8u00ia8";
+            // const COGNITO_Pool_ID = "us-east-1_5G1rm0YWR";
+            // const COGNITO_POOL_URL = "gamezone.auth.us-east-1.amazoncognito.com";
+            //const CLIENT_SECRET = "ADD SECRET KEY OF APP CLIENT";
             window.location.href = "https://gamezone.auth.us-east-1.amazoncognito.com//oauth2/authorize?identity_provider=Google&redirect_uri=https://gamezone004.herokuapp.com/test/&response_type=token&client_id=33j71htshrgj2jm6uir8u00ia8&scope=email openid phone profile"
+            // https:///gamezone.auth.us-east-1.amazoncognito.com/login?response_type=code&client_id=33j71htshrgj2jm6uir8u00ia8&redirect_uri=https://localhost/"
           }
+
+          // const goToForgetPassword = event => {
+          //   event.preventDefault();
+          //   window.location.href = "localhost:3000/forget-password"
+          // }
         const onSubmit = event => {
             event.preventDefault();
             
@@ -23,11 +33,24 @@ export default() => {
             Username: email,
             Password: password
             });
+
+            // const getuid = () =>{
+                
+            //     fetch('https://prln8vmlkf.execute-api.us-east-1.amazonaws.com/v1/sign-in?uid='+email)
+            //         .then(response => response.json())
+            //         .then(data => {
+            //             console.log(data);
+            //             localStorage.setItem("user",data.data.UserId);
+            //         });
+
+            // }
+
             user.authenticateUser(authDetails, {
             
             onSuccess: async data => {
                 
                 console.log("onSuccess:", data);
+                //await getuid();
                 const name=true
                 setUsername(name)
                 setShowProfile(true)
@@ -88,10 +111,11 @@ export default() => {
           <button type="submit" className="btn btn-primary btn-block">
             Submit
           </button>
-          <p className="forgot-password text-right">
-             <a href="#">Forgot password?</a>
-          </p>
+          
         </form>
+        <p className="forgot-password text-right" >
+          <Link className="nav-link" to={"/forget-password"}>Forget Password!</Link>
+          </p>
       </div>
       <div>
       <span className="idpDescription-customizable"
