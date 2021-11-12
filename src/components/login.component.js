@@ -10,6 +10,13 @@ export default() => {
         const [email, setEmail] = useState("");
         const [password, setPassword] = useState("");
         function redirectt() {
+<<<<<<< HEAD
+=======
+            // const COGNITO_CLIENT_ID = "##########";
+            // const COGNITO_Pool_ID = "##############";
+            // const COGNITO_POOL_URL = "################";
+            //const CLIENT_SECRET = "ADD SECRET KEY OF APP CLIENT";
+>>>>>>> 61551111b219f3e897708265c5a3f3f801d5a3ef
             window.location.href = "https://gamezone.auth.us-east-1.amazoncognito.com//oauth2/authorize?identity_provider=Google&redirect_uri=https://gamezone004.herokuapp.com/test/&response_type=token&client_id=33j71htshrgj2jm6uir8u00ia8&scope=email openid phone profile"
           }
           const getuid = async(email) => {
