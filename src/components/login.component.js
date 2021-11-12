@@ -12,6 +12,18 @@ export default() => {
         function redirectt() {
             window.location.href = "https://gamezone.auth.us-east-1.amazoncognito.com//oauth2/authorize?identity_provider=Google&redirect_uri=https://gamezone004.herokuapp.com/test/&response_type=token&client_id=33j71htshrgj2jm6uir8u00ia8&scope=email openid phone profile"
           }
+          const getuid = async(email) => {
+            let name="";
+            fetch(
+              "https://prln8vmlkf.execute-api.us-east-1.amazonaws.com/v1/sign-in?uid=" +
+                email+"&name="+name
+            )
+              .then((response) => response.json())
+              .then((data) => {
+                console.log(data);
+                localStorage.setItem("minutes",data.data.purchase_minutes);
+              });
+          };
         const onSubmit = event => {
             event.preventDefault();
             
@@ -26,6 +38,7 @@ export default() => {
             user.authenticateUser(authDetails, {
             
             onSuccess: async data => {
+                await getuid(email)
                 console.log("onSuccess:", data);
                 const name=true
                 setUsername(name)

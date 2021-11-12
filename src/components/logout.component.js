@@ -3,7 +3,7 @@ import { LoginContext } from "../contexts/LoginContext";
 import './logout.css'
 export default() =>{
     const {setShowProfile} = useContext(LoginContext)
-    
+    delete localStorage.minutes
     delete localStorage.showProfile
     delete localStorage.user
     setShowProfile(false)
