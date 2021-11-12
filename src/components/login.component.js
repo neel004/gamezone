@@ -26,7 +26,6 @@ export default() => {
             user.authenticateUser(authDetails, {
             
             onSuccess: async data => {
-                
                 console.log("onSuccess:", data);
                 const name=true
                 setUsername(name)
@@ -37,6 +36,8 @@ export default() => {
             
             onFailure: err => {
                 console.error("onFailure:", err);
+                console.log(err.message)
+                alert(err.message)
             },
 
             newPasswordRequired: data => {
@@ -46,6 +47,7 @@ export default() => {
 
         };
 
+        
         return (
           <div className="auth-inner">
       <div>

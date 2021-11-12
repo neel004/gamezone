@@ -29,12 +29,23 @@ export default () => {
       requestOptions
     )
       .then((response) => response.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+      console.log(data.body)
+      }
+        );
   };
   const onSubmit = (event) => {
     event.preventDefault();
     UserPool.signUp(email, password, [], null, (err, data) => {
-      if (err) console.error(err);
+      if (err){
+        console.log("from Error")
+        console.error(err.message);
+        alert(err.message)
+      } 
+      else{
+        alert("Success!" + " Please Check your email for Confirmation.")
+        window.location.href = "https://gamezone004.herokuapp.com/sign-in"
+      }
       registerUser(email, lname, fname);
       console.log(data);
     });

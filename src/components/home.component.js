@@ -5,9 +5,9 @@ import './home.css'
 export default() => {
       
         return (
-        <div className="auth-inner">
+        <div className="home">
                 <Slideshow />
-                <h3>Logged In</h3>
+                <h3>Welcome to Gamezone!</h3>
                 </div>
         );
     
