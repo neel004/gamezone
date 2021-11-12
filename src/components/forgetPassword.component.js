@@ -39,14 +39,18 @@ export default () => {
     console.log('Stage 2')
     if (password !== confirmPassword) {
       console.error("Passwords are not the same");
+      alert("Passwords Doesn't match. Try again.")
       return;
     }
 
     getUser().confirmPassword(code, password, {
       onSuccess: data => {
         console.log("onSuccess:", data);
+        alert("Success!!")
+        window.location.href = "https://gamezone004.herokuapp.com/sign-in"
       },
       onFailure: err => {
+        alert(err.message)
         console.error("onFailure:", err);
       }
     });
